@@ -3,12 +3,17 @@ function drag(id){
 	var disX = 0;
 	var disY = 0;
 	obj.onmousedown = function(ev){
-		disX = ev.pageX - obj.offsetLeft;
-		disY = ev.pageY - obj.offsetTop;
+		disX = ev.clientX - obj.offsetLeft;
+		disY = ev.clientY - obj.offsetTop;
 
-		obj.onmousemove = function(ev){
-			obj.style.left = ev.pageX - disX + 'px';
-			obj.style.top = ev.pageY - disY + 'px';
+		document.onmousemove = function(ev){
+			obj.style.left = ev.clientX - disX + 'px';
+			obj.style.top = ev.clientY - disY + 'px';
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
 		}
 	}
+	return false;
 }

@@ -4,12 +4,20 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<style type="text/css" media="screen">
-		div{}
-	</style>
-<script src="drag.js"></script>
+<style type="text/css" media="screen">
+	div{
+		width: 200px;
+		height: 200px;
+		background-color: purple;
+		position: absolute;
+	}
+</style>
 </head>
 <body>
-	<div></div>
+	<div id="div1"></div>
+<script src="drag.js"></script>
+<script>
+	drag('div1');
+</script>
 </body>
 </html>
